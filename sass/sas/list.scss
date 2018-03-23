@@ -1,0 +1,69 @@
+@import 'index';
+
+*{
+	margin:0;
+	padding:0;
+}
+nav{
+	background-color:red;
+	a{
+		width:200px;
+	}
+}
+$borderDirection:top !default;
+$baseFontSize:16px;
+$baseLineHeight:1.5;
+#top_nav{
+	border-#{$borderDirection}:1px solid #ccc;
+}
+body{
+	font:#{$baseFontSize}/#{$baseLineHeight};
+}
+$color:me;
+body{
+	@if $color == me{
+	background-color:red;
+	}@else if $color ==you{
+		background-color:blue;
+	}
+}
+$col:4;
+@for $i from 1 through $col{
+	col-#{$i} {
+		width:100% / $col * $i; //through  包含终止的数字
+	}
+}
+$col:4;
+@for $i from 1 to $col{
+	col-#{$i} {
+		width:100% / $col * $i; // to 不包含终止的数字
+	}
+}
+// $icons: sueccess error warning;
+// @each $icon in $icons{
+// 	icon
+// }
+$arr:1, 2 ,3 ,4;
+@each $i in $arr{
+	icon-#{$i}{
+		background-color:url(img/#{$i}.jpg)
+	}
+}
+@mixin size($wi:100px,$he:100px){
+	width:$wi;
+	height:$he;
+	border:1px solid black;
+}
+#div{
+	@include size(200px,300px);
+}
+$colors:(ligth:#fff,dark:000);
+@function color($key){
+	@return map-get($colors,$key);
+}
+#div2{
+	color:color(ligth);
+}
+#div3{
+	@extend #div2;
+}
