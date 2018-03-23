@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	 //cookie   每个cookie大小不能大于4kb 每条数据不能多于50条 ，有效期  路径
+	 //特点1， 单个cool、kie 限制4KB
+	 //2.一个站点限制50条左右  3
+	 //3/存在一定风险  
+	 //4、默认的有效期是会话结束时cookie失效，
+	 //5.设置路径的问题
+	 //6，设置域名的问题 
+	 //7.安全设置
+	 document.cookie = "key=value";
+	 //创建日期对象
+	 var date = new Date();
+	 date.setDate(date.getDate()+5);
+	 document.cookie = "test=value;expries="+date();
+	 //设置路径
+	 document.cookie = "test2=value;expries="+date+";path=/";
+	 // document.cookie = "test2=value;encodeURICompoent'(姓名=说的就是爱神的箭);expries="+date+";path";
+	 // //encodeURIComponent 解码
+	 //decodeURIComponent
+</script>
+</html>
